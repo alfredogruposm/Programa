@@ -1,0 +1,417 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FFAC66C-9BC2-4C39-853D-B667CF6B645E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>EquimarFac</RootNamespace>
+    <AssemblyName>EquimarFac</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CFDI, Version=1.0.4716.19279, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\CFDI.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO\DS_Catalogos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Catalogos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DS_Facturas.cs">
+      <DependentUpon>DS_Facturas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BO\DS_Facturas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DS_Facturas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DAO\CatalogosDAO.cs" />
+    <Compile Include="DAO\FacturasDAO.cs" />
+    <Compile Include="DAO\FelWebServiceDAO.cs" />
+    <Compile Include="DAO\Numalet.cs" />
+    <Compile Include="DAO\TimbradoFelWebService.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\BarcosBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\BarcosBusqueda.Designer.cs">
+      <DependentUpon>BarcosBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Clientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Clientes.Designer.cs">
+      <DependentUpon>Clientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\ClientesBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\ClientesBusqueda.Designer.cs">
+      <DependentUpon>ClientesBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Compras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Compras.Designer.cs">
+      <DependentUpon>Compras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\ComprasCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\ComprasCtrl.Designer.cs">
+      <DependentUpon>ComprasCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Facturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Facturas.Designer.cs">
+      <DependentUpon>Facturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\FacturasCtrl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\FacturasCtrl.Designer.cs">
+      <DependentUpon>FacturasCtrl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\IngresaFac.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\IngresaFac.Designer.cs">
+      <DependentUpon>IngresaFac.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Plantillas\Factura_rpt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Factura_rpt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Plantillas\NotaCredito.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NotaCredito.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Productos.Designer.cs">
+      <DependentUpon>Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Proveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Proveedores.Designer.cs">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\RemolcadoresBusqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\RemolcadoresBusqueda.Designer.cs">
+      <DependentUpon>RemolcadoresBusqueda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Reportes\ReporteFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Reportes\ReporteFactura.Designer.cs">
+      <DependentUpon>ReporteFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Reportes\ReporteNotas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\CatalogosForms\Reportes\ReporteNotas.Designer.cs">
+      <DependentUpon>ReporteNotas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\DatosCuentaGUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\DatosCuentaGUI.Designer.cs">
+      <DependentUpon>DatosCuentaGUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GUI\MDIParent1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\MDIParent1.Designer.cs">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\CatalogosForms\BarcosBusqueda.resx">
+      <DependentUpon>BarcosBusqueda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Clientes.resx">
+      <DependentUpon>Clientes.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\ClientesBusqueda.resx">
+      <DependentUpon>ClientesBusqueda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Compras.resx">
+      <DependentUpon>Compras.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\ComprasCtrl.resx">
+      <DependentUpon>ComprasCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Facturas.resx">
+      <DependentUpon>Facturas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\FacturasCtrl.resx">
+      <DependentUpon>FacturasCtrl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\IngresaFac.resx">
+      <DependentUpon>IngresaFac.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Plantillas\Factura_rpt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Factura_rpt.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Plantillas\NotaCredito.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NotaCredito.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Productos.resx">
+      <DependentUpon>Productos.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Proveedores.resx">
+      <DependentUpon>Proveedores.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\RemolcadoresBusqueda.resx">
+      <DependentUpon>RemolcadoresBusqueda.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Reportes\ReporteFactura.resx">
+      <DependentUpon>ReporteFactura.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\CatalogosForms\Reportes\ReporteNotas.resx">
+      <DependentUpon>ReporteNotas.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\DatosCuentaGUI.resx">
+      <DependentUpon>DatosCuentaGUI.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GUI\MDIParent1.resx">
+      <DependentUpon>MDIParent1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="BO\DS_Catalogos.xsc">
+      <DependentUpon>DS_Catalogos.xsd</DependentUpon>
+    </None>
+    <None Include="BO\DS_Catalogos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Catalogos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BO\DS_Catalogos.xss">
+      <DependentUpon>DS_Catalogos.xsd</DependentUpon>
+    </None>
+    <None Include="BO\DS_Facturas.xsc">
+      <DependentUpon>DS_Facturas.xsd</DependentUpon>
+    </None>
+    <None Include="BO\DS_Facturas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DS_Facturas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BO\DS_Facturas.xss">
+      <DependentUpon>DS_Facturas.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\FelWebService\ConexionRemota32.wsdl" />
+    <None Include="Web References\FelWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TimbradoFelWebService\WS-TFD.wsdl" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Web References\FelWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\TimbradoFelWebService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="https://www.fel.mx/ConexionRemotaCFDI32/ConexionRemota32.asmx%3fWSDL">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\FelWebService\</RelPath>
+      <UpdateFromURL>https://www.fel.mx/ConexionRemotaCFDI32/ConexionRemota32.asmx%3fWSDL</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EquimarFac_FelWebService_ConexionRemota32</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="https://www.fel.mx/WS-TFD/WS-TFD.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\TimbradoFelWebService\</RelPath>
+      <UpdateFromURL>https://www.fel.mx/WS-TFD/WS-TFD.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>EquimarFac_TimbradoFelWebService_WS_TFD</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\TimbradoFelWebService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\TimbradoFelWebService\WS-TFD.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
